@@ -1,33 +1,17 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "timezone": "Asia/Kolkata",
-    "extends": [
-        "config:recommended"
-    ],
-    "packageRules": [
-        {
-            "matchDatasources": [
-                "docker"
-            ],
-            "matchPackageNames": [
-                "python"
-            ],
-            "versioning": "docker",
-            "groupName": "public-docker-images",
-            "schedule": [
-                "after 4:15pm every weekday"
-            ]
-        },
-        {
-            "matchUpdateTypes": [
-                "patch"
-            ],
-            "automerge": true
-        }
-    ],
-    "labels": [
-        "dependencies"
-    ],
-    "prHourlyLimit": 3,
-    "prConcurrentLimit": 5
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "matchPackageNames": ["python"],
+      "matchManagers": ["dockerfile"],  // Applies to Dockerfile only
+      "allowedVersions": "3.9.x",       // Lock to 3.9.x versions
+      "pinDigests": true                // Enforce digest pinning
+    },
+    {
+      "matchPackageNames": ["python"],
+      "matchManagers": ["dockerfile"],
+      "ignoreUnstable": true,           // Skip unstable versions (e.g., `3.13-alpha`)
+      "enabled": true                   // Ensure Renovate is enabled for Docker
+    }
+  ]
 }
