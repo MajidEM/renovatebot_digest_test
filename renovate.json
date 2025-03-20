@@ -14,7 +14,9 @@
             ],
             "versioning": "docker",
             "groupName": "public-docker-images",
-            "schedule": "daily"
+            "schedule": [
+                "after 4:15pm every weekday"
+            ]
         },
         {
             "matchUpdateTypes": [
