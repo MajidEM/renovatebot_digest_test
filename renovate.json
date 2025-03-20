@@ -3,15 +3,15 @@
   "packageRules": [
     {
       "matchPackageNames": ["python"],
-      "matchManagers": ["dockerfile"],  // Applies to Dockerfile only
-      "allowedVersions": "3.9.x",       // Lock to 3.9.x versions
-      "pinDigests": true                // Enforce digest pinning
+      "matchManagers": ["dockerfile"],  
+      "allowedVersions": "3.9.x",
+      "pinDigests": true      
     },
     {
       "matchPackageNames": ["python"],
       "matchManagers": ["dockerfile"],
-      "ignoreUnstable": true,           // Skip unstable versions (e.g., `3.13-alpha`)
-      "enabled": true                   // Ensure Renovate is enabled for Docker
+      "ignoreUnstable": true,
+      "enabled": true
     }
   ]
 }
