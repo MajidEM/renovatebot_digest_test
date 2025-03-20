@@ -10,7 +10,7 @@
                 "docker"
             ],
             "matchPackageNames": [
-                "nginx"
+                "python"
             ],
             "versioning": "docker",
             "groupName": "public-docker-images",
